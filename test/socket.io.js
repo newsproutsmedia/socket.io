@@ -1,7 +1,7 @@
 "use strict";
 
 var http = require("http").Server;
-var io = require("../lib");
+var io = require("..");
 var fs = require("fs");
 var join = require("path").join;
 var exec = require("child_process").exec;
@@ -465,8 +465,8 @@ describe("socket.io", function() {
   });
 
   describe("namespaces", function() {
-    var Socket = require("../lib/socket");
-    var Namespace = require("../lib/namespace");
+    const { Socket } = require("../dist/socket");
+    const { Namespace } = require("../dist/namespace");
 
     it("should be accessible through .sockets", function() {
       var sio = io();
@@ -2246,7 +2246,7 @@ describe("socket.io", function() {
   });
 
   describe("middleware", function(done) {
-    var Socket = require("../lib/socket");
+    const { Socket } = require("../dist/socket");
 
     it("should call functions", function(done) {
       var srv = http();
@@ -2436,7 +2436,7 @@ describe("socket.io", function() {
   });
 
   describe("socket middleware", function(done) {
-    var Socket = require("../lib/socket");
+    const { Socket } = require("../dist/socket");
 
     it("should call functions", function(done) {
       var srv = http();
